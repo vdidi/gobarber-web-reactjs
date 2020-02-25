@@ -11,7 +11,7 @@ export default function auth(state = INITIAL_STATE, action){
     switch (action.type) {
       case 'auth/SIGN_IN_REQUEST': {
         draft.loading = true;
-        break
+        break;
       }
       case '@auth/SIGN_IN_SUCCESS': {
         draft.token = action.payload.token;
