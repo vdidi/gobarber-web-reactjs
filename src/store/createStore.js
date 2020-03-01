@@ -4,9 +4,10 @@ export default (reducers, middlewares) => {
   const enhancer =
     process.env.NODE_ENV === 'development'
       ? compose(
-          console.tron.createEnhancer(),
-          applyMiddleware(...middlewares)
+          applyMiddleware(...middlewares),
+          console.tron.createEnhancer()
         )
-      : applyMiddleware(...middlewares);
-      return createStore(reducers, enhancer);
-}
+      : compose(applyMiddleware(...middlewares));
+
+  return createStore(reducers, enhancer);
+};
