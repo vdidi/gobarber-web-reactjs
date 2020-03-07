@@ -4,14 +4,15 @@ import Header from '~/components/header';
 
 import { Wrapper } from './styles';
 
-export default function DefaultLayout({ children }){
+export default function DefaultLayout({ children }) {
   return (
     <Wrapper>
-      <Header>{children}</Header>
+      <Header />
+      {children}
     </Wrapper>
-  )
+  );
 }
 
 DefaultLayout.propTypes = {
   children: PropTypes.element.isRequired,
-}
+};

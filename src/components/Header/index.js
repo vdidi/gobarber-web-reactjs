@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Notification from "../Notifications";
+import Notifications from '../Notifications';
 
 import logo from '~/assets/logo-purple.svg';
 import { Container, Profile, Content } from './styles';
@@ -13,11 +13,11 @@ export default function Header() {
     <Container>
       <Content>
         <nav>
-          <img src={logo} alt="GoBarber"/>
+          <img src={logo} alt="GoBarber" />
           <Link to="/dashboard">DASHBOARD</Link>
         </nav>
         <aside>
-          <Notification />
+          <Notifications />
           <Profile>
             <div>
               <strong>{profile.name}</strong>
@@ -30,8 +30,8 @@ export default function Header() {
                   : 'https://api.adorable.io/avatars/50/abott@adorable.png'
               }
               alt="profile"
-            />            
-          </Profile>          
+            />
+          </Profile>
         </aside>
       </Content>
     </Container>
